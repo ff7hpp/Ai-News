@@ -58,8 +58,15 @@ sources:
       trust_score: 7
 
     # ── Student / Free deals ─────────────────────────────────────
-    - name: Student Beans Blog
-      url: https://www.studentbeans.com/blog/feed/
+    - name: Free PC Games (RSS)
+      url: https://www.freepcsoftware.co.uk/rss
+      trust_score: 7
+    - name: Epic Games Free (RSS)
+      url: https://store.epicgames.com/en-US/free-games
+      trust_score: 8
+      # Note: scraped via Atom-compatible aggregator
+    - name: IsThereAnyDeal Blog
+      url: https://blog.isthereanydeal.com/feed/
       trust_score: 7
 
   webpages:
@@ -67,14 +74,6 @@ sources:
       url: https://education.github.com/pack
       link_selector: a
       trust_score: 10
-    - name: Epic Games Store Free Games
-      url: https://store.epicgames.com/en-US/free-games
-      link_selector: a
-      trust_score: 8
-    - name: Prime Gaming Free Games
-      url: https://gaming.amazon.com/home
-      link_selector: a
-      trust_score: 8
 
   github_releases:
     # Security tools

@@ -23,8 +23,8 @@ The project is built on a minimal, flat architecture consisting of 4 core module
 
 ```powershell
 # Clone and enter the repository
-git clone https://github.com/yourusername/personal-intelligence-digest.git
-cd personal-intelligence-digest
+git clone https://github.com/ff7hpp/Ai-News.git
+cd Ai-News
 
 # Create and activate virtual environment
 py -3.11 -m venv .venv
