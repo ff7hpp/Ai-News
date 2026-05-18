@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta, timezone
 
-from app.models import DigestItem
-from app.processing.ranker import rank_items
+from app.core import DigestItem
+from app.engine import rank_items
 
 
 SCORING_RULES = {

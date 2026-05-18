@@ -1,5 +1,5 @@
-from app.models import DigestItem
-from app.processing.deduplicator import deduplicate_items, normalize_title, normalize_url
+from app.core import DigestItem, normalize_title, normalize_url
+from app.engine import deduplicate_items
 
 
 def test_normalize_url_removes_tracking_parameters() -> None:
