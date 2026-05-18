@@ -1,0 +1,108 @@
+sources:
+  rss:
+    # ── Cybersecurity (most trusted) ─────────────────────────────
+    - name: CISA Advisories
+      url: https://www.cisa.gov/cybersecurity-advisories/all.xml
+      trust_score: 10
+    - name: The Hacker News
+      url: https://feeds.feedburner.com/TheHackersNews
+      trust_score: 9
+    - name: Krebs on Security
+      url: https://krebsonsecurity.com/feed/
+      trust_score: 10
+    - name: Bleeping Computer
+      url: https://www.bleepingcomputer.com/feed/
+      trust_score: 9
+    - name: Schneier on Security
+      url: https://www.schneier.com/feed/atom/
+      trust_score: 9
+    - name: Project Zero (Google)
+      url: https://googleprojectzero.blogspot.com/feeds/posts/default
+      trust_score: 9
+    - name: Ars Technica Security
+      url: https://feeds.arstechnica.com/arstechnica/security
+      trust_score: 8
+    - name: Dark Reading
+      url: https://www.darkreading.com/rss.xml
+      trust_score: 8
+    - name: SANS Internet Storm Center
+      url: https://isc.sans.edu/rssfeed_full.xml
+      trust_score: 9
+
+    # ── AI & Developer Tools ─────────────────────────────────────
+    - name: OpenAI Blog
+      url: https://openai.com/news/rss.xml
+      trust_score: 9
+    - name: Google DeepMind Blog
+      url: https://deepmind.google/blog/rss.xml
+      trust_score: 9
+    - name: Hugging Face Blog
+      url: https://huggingface.co/blog/feed.xml
+      trust_score: 8
+    - name: GitHub Blog
+      url: https://github.blog/feed/
+      trust_score: 9
+    - name: Ars Technica Technology
+      url: https://feeds.arstechnica.com/arstechnica/technology-lab
+      trust_score: 8
+
+    # ── General Tech & Software ──────────────────────────────────
+    - name: Hacker News (Top Stories)
+      url: https://hnrss.org/frontpage
+      trust_score: 8
+    - name: The Verge
+      url: https://www.theverge.com/rss/index.xml
+      trust_score: 7
+    - name: TechCrunch
+      url: https://techcrunch.com/feed/
+      trust_score: 7
+
+    # ── Student / Free deals ─────────────────────────────────────
+    - name: Student Beans Blog
+      url: https://www.studentbeans.com/blog/feed/
+      trust_score: 7
+
+  webpages:
+    - name: GitHub Student Developer Pack
+      url: https://education.github.com/pack
+      link_selector: a
+      trust_score: 10
+    - name: Epic Games Store Free Games
+      url: https://store.epicgames.com/en-US/free-games
+      link_selector: a
+      trust_score: 8
+    - name: Prime Gaming Free Games
+      url: https://gaming.amazon.com/home
+      link_selector: a
+      trust_score: 8
+
+  github_releases:
+    # Security tools
+    - name: Metasploit Framework
+      repo: rapid7/metasploit-framework
+      trust_score: 9
+    - name: Nuclei (ProjectDiscovery)
+      repo: projectdiscovery/nuclei
+      trust_score: 9
+    - name: OWASP ZAP
+      repo: zaproxy/zaproxy
+      trust_score: 9
+    - name: Nmap
+      repo: nmap/nmap
+      trust_score: 9
+    # Dev / AI tools
+    - name: Ollama (local AI)
+      repo: ollama/ollama
+      trust_score: 8
+    - name: LM Studio
+      repo: lmstudio-ai/lmstudio-bug-tracker
+      trust_score: 7
+    - name: Playwright
+      repo: microsoft/playwright
+      trust_score: 8
+    - name: VS Code
+      repo: microsoft/vscode
+      trust_score: 9
+    - name: Cursor IDE
+      repo: getcursor/cursor
+      trust_score: 7

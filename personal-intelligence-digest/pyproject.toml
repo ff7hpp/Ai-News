@@ -1,0 +1,25 @@
+[project]
+name = "personal-intelligence-digest"
+version = "0.1.0"
+description = "Automated weekly personal intelligence digest from trusted feeds and public websites."
+requires-python = ">=3.11"
+dependencies = [
+  "beautifulsoup4>=4.12.3",
+  "feedparser>=6.0.11",
+  "jinja2>=3.1.4",
+  "openai>=1.55.0",
+  "python-dotenv>=1.0.1",
+  "pyyaml>=6.0.2",
+  "requests>=2.32.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3.3"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"

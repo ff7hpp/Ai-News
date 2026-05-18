@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weekly Intelligence Digest</title>
+    <style>
+      /* ── Base ──────────────────────────────────────────────── */
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        background: #f2ede8;
+        color: #1a1a1a;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 15px;
+        line-height: 1.7;
+      }
+      a { color: #1a1a1a; text-decoration: none; }
+      a:hover { color: #b03a2e; }
+
+      /* ── Outer wrapper ─────────────────────────────────────── */
+      .outer { background: #f2ede8; padding: 32px 12px 48px; }
+      .wrap  { max-width: 680px; margin: 0 auto; }
+
+      /* ── Masthead ──────────────────────────────────────────── */
+      .masthead {
+        text-align: center;
+        border-top: 4px solid #1a1a1a;
+        border-bottom: 4px solid #1a1a1a;
+        padding: 18px 0 14px;
+        margin-bottom: 6px;
+      }
+      .masthead-kicker {
+        font-family: 'Arial Narrow', Arial, sans-serif;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #888;
+        margin-bottom: 6px;
+      }
+      .masthead h1 {
+        font-family: Georgia, serif;
+        font-size: 38px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: #1a1a1a;
+        line-height: 1.1;
+      }
+      .masthead-tagline {
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #888;
+        margin-top: 8px;
+      }
+      .masthead-date {
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        color: #888;
+        border-top: 1px solid #c8c0b6;
+        margin-top: 10px;
+        padding-top: 8px;
+      }
+
+      /* ── Thin rule ─────────────────────────────────────────── */
+      .rule { border: none; border-top: 1px solid #c8c0b6; margin: 18px 0; }
+      .rule-heavy { border: none; border-top: 2px solid #1a1a1a; margin: 20px 0; }
+
+      /* ── Section label ─────────────────────────────────────── */
+      .section-label {
+        font-family: 'Arial Narrow', Arial, sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #888;
+        margin-bottom: 12px;
+      }
+
+      /* ── LEAD STORIES (top 3 of week) ─────────────────────── */
+      .lead-block {
+        background: #fff;
+        border: 1px solid #d6cfc7;
+        border-top: 5px solid #1a1a1a;
+        padding: 20px 22px 16px;
+        margin-bottom: 20px;
+      }
+      .lead-number {
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #b03a2e;
+        margin-bottom: 6px;
+      }
+      .lead-title {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.25;
+        color: #1a1a1a;
+        margin-bottom: 6px;
+      }
+      .lead-title a { color: #1a1a1a; }
+      .lead-title a:hover { color: #b03a2e; }
+      .lead-byline {
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        color: #888;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e8e2da;
+      }
+      .lead-body {
+        font-size: 14px;
+        color: #2c2c2c;
+        line-height: 1.65;
+      }
+      .lead-action {
+        margin-top: 10px;
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        color: #b03a2e;
+        letter-spacing: 0.3px;
+      }
+      .lead-action::before { content: "→  "; }
+      .lead-deadline {
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        color: #b03a2e;
+        margin-top: 4px;
+      }
+
+      /* ── Urgency pill ──────────────────────────────────────── */
+      .pill {
+        display: inline-block;
+        font-family: Arial, sans-serif;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        padding: 2px 8px;
+        border-radius: 2px;
+        vertical-align: middle;
+        margin-left: 8px;
+        position: relative;
+        top: -2px;
+      }
+      .pill-CRITICAL { background: #b03a2e; color: #fff; }
+      .pill-HIGH     { background: #d4800a; color: #fff; }
+      .pill-MEDIUM   { background: #2e6da4; color: #fff; }
+      .pill-LOW      { background: #e8e2da; color: #888; border: 1px solid #c8c0b6; }
+
+      /* ── Section columns (3 items) ─────────────────────────── */
+      .section-wrap {
+        background: #fff;
+        border: 1px solid #d6cfc7;
+        border-top: 3px solid #1a1a1a;
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
+      .section-head {
+        padding: 12px 18px 10px;
+        border-bottom: 1px solid #e8e2da;
+        background: #faf8f5;
+      }
+      .section-head-title {
+        font-family: Georgia, serif;
+        font-size: 17px;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+      .news-item {
+        padding: 14px 18px;
+        border-bottom: 1px solid #ede7df;
+      }
+      .news-item:last-child { border-bottom: none; }
+      .news-num {
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        color: #b03a2e;
+        margin-bottom: 3px;
+      }
+      .news-title {
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #1a1a1a;
+        margin-bottom: 3px;
+      }
+      .news-title a { color: #1a1a1a; }
+      .news-title a:hover { color: #b03a2e; }
+      .news-source {
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        color: #999;
+        margin-bottom: 5px;
+      }
+      .news-why {
+        font-size: 13px;
+        color: #3a3a3a;
+        line-height: 1.55;
+        margin-bottom: 5px;
+      }
+      .news-action {
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        color: #b03a2e;
+      }
+      .news-action::before { content: "→  "; }
+      .news-deadline {
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        color: #b03a2e;
+        font-weight: 700;
+        margin-top: 3px;
+      }
+      .news-deadline::before { content: "⏰  "; }
+
+      /* ── Action Checklist ──────────────────────────────────── */
+      .checklist-wrap {
+        background: #fff;
+        border: 1px solid #d6cfc7;
+        border-top: 3px solid #2e6da4;
+        margin-bottom: 20px;
+      }
+      .checklist-head {
+        padding: 12px 18px;
+        border-bottom: 1px solid #e8e2da;
+        background: #f5f8fc;
+      }
+      .checklist-head-title {
+        font-family: Georgia, serif;
+        font-size: 17px;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+      .checklist-head-sub {
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        color: #888;
+        margin-top: 2px;
+        letter-spacing: 0.5px;
+      }
+      .check-item {
+        padding: 11px 18px;
+        border-bottom: 1px solid #ede7df;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .check-item:last-child { border-bottom: none; }
+      .check-box {
+        width: 16px;
+        height: 16px;
+        border: 2px solid #c8c0b6;
+        border-radius: 2px;
+        flex-shrink: 0;
+        margin-top: 3px;
+      }
+      .check-content {}
+      .check-title {
+        font-size: 13px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 2px;
+      }
+      .check-title a { color: #1a1a1a; }
+      .check-title a:hover { color: #b03a2e; }
+      .check-action {
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        color: #2e6da4;
+        font-weight: 700;
+      }
+      .check-deadline {
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        color: #b03a2e;
+        font-weight: 700;
+        margin-top: 2px;
+      }
+
+      /* ── Empty ─────────────────────────────────────────────── */
+      .no-items {
+        padding: 14px 18px;
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        color: #aaa;
+        font-style: italic;
+      }
+
+      /* ── Footer ────────────────────────────────────────────── */
+      .footer {
+        border-top: 1px solid #c8c0b6;
+        padding-top: 16px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        color: #aaa;
+        letter-spacing: 0.5px;
+        line-height: 1.8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="wrap">
+
+        <!-- MASTHEAD -->
+        <div class="masthead">
+          <div class="masthead-kicker">Your Weekly Briefing</div>
+          <h1>Intelligence Digest</h1>
+          <div class="masthead-tagline">Cybersecurity · AI · Software · Deals · Student Benefits</div>
+          <div class="masthead-date">{{ "Monday Edition — Top picks from trusted sources this week" }}</div>
+        </div>
+
+        <hr class="rule">
+
+        <!-- ① TOP 3 OF THE WEEK -->
+        {% if critical_items %}
+          <div class="section-label">⬛ This Week's Must-Reads</div>
+          {% for item in critical_items %}
+            <div class="lead-block">
+              <div class="lead-number">
+                No. {{ loop.index }} of 3
+                <span class="pill pill-{{ item.urgency }}">{{ item.urgency }}</span>
+              </div>
+              <div class="lead-title">
+                <a href="{{ item.url }}">{{ item.title }}</a>
+              </div>
+              <div class="lead-byline">
+                {{ item.source }} &nbsp;·&nbsp; {{ item.category | replace('_', ' ') | title }}
+              </div>
+              <div class="lead-body">
+                {% if item.why_it_matters %}{{ item.why_it_matters }}{% endif %}
+              </div>
+              {% if item.action_to_take %}
+                <div class="lead-action">{{ item.action_to_take }}</div>
+              {% endif %}
+              {% if item.deadline %}
+                <div class="lead-deadline">Deadline: {{ item.deadline }}</div>
+              {% endif %}
+            </div>
+          {% else %}
+            <p style="color:#aaa; font-style:italic; padding:12px 0;">Nothing flagged as critical this week.</p>
+          {% endfor %}
+
+          <hr class="rule-heavy">
+        {% endif %}
+
+        <!-- ② PRIORITY SECTIONS — 3 items each -->
+        {% for category, label in section_order %}
+          {% set cat_items = sections[category][:max_per_section] %}
+          {% if cat_items %}
+            <div class="section-wrap">
+              <div class="section-head">
+                <div class="section-head-title">{{ label }}</div>
+              </div>
+              {% for item in cat_items %}
+                <div class="news-item">
+                  <div class="news-num">
+                    {{ loop.index }}.
+                    <span class="pill pill-{{ item.urgency }}">{{ item.urgency }}</span>
+                  </div>
+                  <div class="news-title">
+                    <a href="{{ item.url }}">{{ item.title }}</a>
+                  </div>
+                  <div class="news-source">{{ item.source }}</div>
+                  {% if item.why_it_matters %}
+                    <div class="news-why">{{ item.why_it_matters }}</div>
+                  {% endif %}
+                  {% if item.action_to_take %}
+                    <div class="news-action">{{ item.action_to_take }}</div>
+                  {% endif %}
+                  {% if item.deadline %}
+                    <div class="news-deadline">{{ item.deadline }}</div>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        <!-- ③ WEEKLY ACTION CHECKLIST -->
+        {% if action_items %}
+          <div class="checklist-wrap">
+            <div class="checklist-head">
+              <div class="checklist-head-title">✅ Weekly Action Checklist</div>
+              <div class="checklist-head-sub">Things to claim, patch, download or enroll in before next Monday</div>
+            </div>
+            {% for item in action_items %}
+              <div class="check-item">
+                <div class="check-box"></div>
+                <div class="check-content">
+                  <div class="check-title"><a href="{{ item.url }}">{{ item.title }}</a></div>
+                  <div class="check-action">{{ item.action_to_take or "Open and decide." }}</div>
+                  {% if item.deadline %}
+                    <div class="check-deadline">Deadline: {{ item.deadline }}</div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <!-- FOOTER -->
+        <div class="footer">
+          <strong>Personal Intelligence Digest</strong><br>
+          Sources: CISA · Krebs on Security · Bleeping Computer · The Hacker News · SANS ISC<br>
+          OpenAI · DeepMind · Hugging Face · GitHub · Hacker News · Ars Technica<br>
+          No social media. No noise. Only trusted feeds.
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>

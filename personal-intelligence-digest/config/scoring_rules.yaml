@@ -1,0 +1,42 @@
+base_score: 1
+default_trust_score: 5
+high_value_word_points: 4
+
+recency:
+  last_24_hours: 10
+  last_3_days: 6
+  last_7_days: 2
+
+# Priority order: cybersecurity & student benefits weighted highest
+category_bonus:
+  cybersecurity: 10
+  student_benefits: 9
+  gaming_deals: 7
+  ai_tools: 5
+  software_tools: 3
+  other: 0
+
+keywords:
+  # Security — highest priority
+  CVE: 8
+  exploit: 8
+  zero-day: 8
+  vulnerability: 7
+  patch: 7
+  breach: 7
+  ransomware: 7
+  red team: 6
+  offensive security: 6
+  # Student / Free offers — second priority
+  free: 7
+  student: 7
+  limited time: 7
+  giveaway: 7
+  lifetime deal: 6
+  claim: 6
+  enroll: 5
+  discount: 5
+  # Dev / AI tools
+  AI coding: 4
+  debugging: 4
+  automation: 4

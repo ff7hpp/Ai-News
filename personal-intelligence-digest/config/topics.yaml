@@ -1,0 +1,31 @@
+topics:
+  cybersecurity:
+    google_news_trust_score: 7
+    google_news_queries:
+      - CVE exploit patch vulnerability 2025
+      - zero-day attack cybersecurity breach
+      - red team penetration testing offensive security
+
+  ai_tools:
+    google_news_trust_score: 6
+    google_news_queries:
+      - new AI coding tool developer release 2025
+      - generative AI developer productivity tool
+
+  software_tools:
+    google_news_trust_score: 6
+    google_news_queries:
+      - new open source developer tool release 2025
+      - best free software engineering tool
+
+  gaming_deals:
+    google_news_trust_score: 5
+    google_news_queries:
+      - free PC game giveaway this week 2025
+      - Epic Games free game Prime Gaming claim
+
+  student_benefits:
+    google_news_trust_score: 6
+    google_news_queries:
+      - free software for students developers 2025
+      - student developer discount free subscription benefit
