@@ -1,34 +1,90 @@
 <div align="center">
-  <img src="assets/logo.png" alt="Ai-News Logo" width="250"/>
-  <h1>Personal Intelligence Digest</h1>
-  <p><em>A sleek, automated, AI-powered weekly intelligence digest for software engineers.</em></p>
+  <img src="2.png" alt="Intelligence Digest Logo" width="260"/>
+
+  # Intelligence Digest
+
+  **A personal AI-powered weekly news digest built to reduce scrolling and filter useful updates.**
+
+  Cybersecurity • AI • Software • Deals • Student Benefits
 </div>
 
 ---
 
-Bypass the noise of social media. This automated pipeline scrapes high-trust sources directly, uses Gemini AI to summarize the top news into actionable insights, and delivers a scannable, premium HTML email straight to your inbox.
+## Why I Built This
 
-📖 **Want to know how it works under the hood? Check out [ABOUT.md](ABOUT.md) for the full architecture and logic breakdown.**
+I built **Intelligence Digest** because I was spending too much time scrolling through different websites, feeds, and social media just to find the specific news I actually care about.
 
-## ✨ Features
-- **High-Trust Sources:** Direct ingestion from CISA, GitHub releases, BleepingComputer, and more.
-- **AI-Powered Summaries:** Gemini AI extracts exactly *why it matters* and the *action to take*.
-- **Smart Ranking:** Items are ranked by trust score, recency, and keyword value (e.g., CVEs and free deals score highest).
-- **Automated Delivery:** Runs on a Monday cron job via GitHub Actions.
+As a software engineering student interested in cybersecurity, AI, software tools, useful deals, and student benefits, I wanted a simple system that collects the important updates for me automatically.
 
-## 🚀 Quick Start
+The goal is simple:
 
-### 1. Clone & Install
+> Spend less time searching and scrolling. Get the useful information directly.
+
+---
+
+## What This Project Does
+
+**Intelligence Digest** collects news from trusted sources, ranks the most relevant items, summarizes them using AI, and sends the final result as a clean weekly HTML email.
+
+Instead of checking many platforms manually, this project creates one organized weekly briefing.
+
+---
+
+## Features
+
+- **Trusted Sources:** Collects updates from sources like CISA, GitHub releases, BleepingComputer, and other reliable feeds.
+- **AI Summaries:** Uses Gemini AI to explain why each item matters and what action should be taken.
+- **Smart Ranking:** Ranks news based on trust score, recency, keywords, and importance.
+- **Weekly Email Digest:** Sends a clean and readable HTML email.
+- **Automation:** Runs automatically using GitHub Actions.
+
+---
+
+## How It Works
+
+1. Collects news from RSS feeds, GitHub releases, Google News, and selected websites.
+2. Cleans and removes duplicate items.
+3. Scores each item based on relevance and importance.
+4. Uses Gemini AI to summarize the top results.
+5. Generates a clean HTML digest.
+6. Sends the digest by email every week.
+
+---
+
+## Tech Stack
+
+- Python
+- SQLite
+- Gemini AI
+- BeautifulSoup
+- RSS / Atom feeds
+- SMTP Email
+- GitHub Actions
+- YAML configuration files
+
+---
+
+## Quick Start
+
+### 1. Clone the Repository
+
 ```powershell
 git clone https://github.com/ff7hpp/Ai-News.git
 cd Ai-News
+```
+
+### 2. Create a Virtual Environment
+
+```powershell
 py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 
-### 2. Configure Environment
-Copy `.env.example` to `.env` and fill in your details:
+### 3. Configure Environment Variables
+
+Create a `.env` file and add your details:
+
 ```env
 GEMINI_API_KEY=your_gemini_api_key
 SMTP_HOST=smtp.gmail.com
@@ -39,13 +95,24 @@ EMAIL_FROM=your_email@gmail.com
 EMAIL_TO=recipient_email@gmail.com
 ```
 
-### 3. Run It!
-**Test Run (No Email):**
+### 4. Run the Project
+
+Test run without sending email:
+
 ```powershell
 python -m app.main --no-send
 ```
 
-**Full Run (Send Email):**
+Run and send the digest:
+
 ```powershell
 python -m app.main
 ```
+
+---
+
+## Project Goal
+
+This project is my personal solution for information overload.
+
+I created it to help me stay updated without wasting time scrolling, searching, and filtering through irrelevant content. It gives me the news I care about in a simple, organized, and automated way.
